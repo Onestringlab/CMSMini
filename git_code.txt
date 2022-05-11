@@ -1,6 +1,15 @@
 git init .
-git remote add origin git@github.com:Onestringlab/CMSMini.git
+git remote add origin https://github.com/user/repo.git
 
 git add --all
 git commit -a -m "Updated All"
+git push 
+git push --set-upstream origin master
+
+git remote rm <remote-name>
+
+git branch -d <branch-name>
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 
