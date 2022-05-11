@@ -1,0 +1,6 @@
+git init .
+git remote add origin git@github.com:Onestringlab/CMSMini.git
+
+git add --all
+git commit -a -m "Updated All"
+
