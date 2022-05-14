@@ -4,7 +4,7 @@ git remote add origin https://github.com/user/repo.git
 git add --all
 git commit -a -m "Updated All"
 git push 
-git push --set-upstream origin master
+git push --set-upstream origin main
 
 git remote rm <remote-name>
 
@@ -13,3 +13,22 @@ git branch -d <branch-name>
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
+
+----mulai
+echo "# CMSMini" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Onestringlab/CMSMini.git
+git push -u origin main
+
+----update
+git add --all
+git commit -a -m "Updated All"
+git push -u origin main
+
+
+----hapus
+git remote rm <remote-name>
+git branch -d <branch-name>
