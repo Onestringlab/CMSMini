@@ -10,7 +10,7 @@
                 <th scope="col">Category</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Updated At</th>
-                <th scope="col"><a href="#">Add</a></th>
+                <th scope="col"><a href="categories/create">Add</a></th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +21,9 @@
                 <td>{{$category->category}}</td>
                 <td>{{$category->created_at}}</td>
                 <td>{{$category->updated_at}}</td>
-                <td><a href="#">Edit</a> | <a href="#">Del</a></td>
+                <td><a href="categories/{{$category->id}}">Edit</a> |
+                    <a href="categories/edit/{{$category->id}}">Del</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

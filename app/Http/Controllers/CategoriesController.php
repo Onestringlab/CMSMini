@@ -13,69 +13,43 @@ class CategoriesController extends Controller
         return view('categories/categorydata', ['categorydata' => $categorydata]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('categories/categorycreate');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $category = new Categories;
+        $category->category = $request->category;
+        $category->save();
+        return redirect('/categories');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $category = Categories::find($id);
+        return view("categories/categoryshow", ["category" => $category]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $category = Categories::find($id);
+        return view("categories/categorydelete", ["category" => $category]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $category = Categories::find($id);
+        $category->category = $request->category;
+        $category->save();
+        return redirect('/categories');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $category = Categories::find($id);
+        $category->delete();
+        return redirect('/categories');
     }
 }
