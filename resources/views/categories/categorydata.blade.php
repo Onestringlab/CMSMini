@@ -6,7 +6,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">No</th>
                 <th scope="col">Category</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Updated At</th>
