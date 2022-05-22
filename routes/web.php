@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ContentsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,3 +18,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('categories', CategoriesController::class);
 Route::get('/categories/edit/{category}', [CategoriesController::class, 'edit']);
 Route::delete('/categories/{category}', [CategoriesController::class, 'destroy']);
+
+Route::resource('contents', ContentsController::class);
+Route::get('/contents/edit/{content}', [ContentsController::class, 'edit']);
+Route::delete('/contents/{content}', [ContentsController::class, 'destroy']);
