@@ -28,9 +28,13 @@
                 <input name="picture" class="form-control" id="inputPicture">
             </div>
         </div>
-        <div class="mb-3 row col-sm-2">
-            @csrf
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3 row">
+            <div class="col-sm-2">
+                @csrf
+            </div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </div>
     </form>
 </div>

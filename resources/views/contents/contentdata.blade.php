@@ -13,7 +13,7 @@
                 <th scope="col">Picture</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Updated At</th>
-                <th scope="col"><a href="contents/create">Add</a></th>
+                <th scope="col"><a href="contents/create"><i class="bi bi-plus-square"></i></a></th>
             </tr>
         </thead>
         <tbody>
@@ -27,8 +27,8 @@
                 <td>{{$content->picture}}</td>
                 <td>{{$content->created_at}}</td>
                 <td>{{$content->updated_at}}</td>
-                <td><a href="contents/{{$content->id}}">Edit</a> |
-                    <a href="contents/edit/{{$content->id}}">Del</a>
+                <td><a href="contents/{{$content->id}}"><i class="bi bi-pencil-square"></i></a> |
+                    <a href="contents/edit/{{$content->id}}"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             @endforeach

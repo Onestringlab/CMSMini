@@ -10,10 +10,14 @@
                 {{$category->category}}
             </div>
         </div>
-        <div class="mb-3 row col-sm-2">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-primary">Delete</button>
+        <div class="mb-3 row">
+            <div class="col-sm-2">
+                @csrf
+                @method('DELETE')
+            </div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </div>
         </div>
     </form>
 </div>

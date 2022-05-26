@@ -28,10 +28,14 @@
                 <input name="picture" class="form-control" id="inputPicture" value="{{ $content->picture }}">
             </div>
         </div>
-        <div class="mb-3 row col-sm-2">
-            @csrf
-            @method('PATCH')
-            <button type="submit" class="btn btn-primary">Update</button>
+        <div class="mb-3 row">
+            <div class="col-sm-2">
+                @csrf
+                @method('PATCH')
+            </div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
         </div>
     </form>
 </div>

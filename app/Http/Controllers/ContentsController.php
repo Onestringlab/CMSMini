@@ -8,6 +8,11 @@ use App\Models\Categories;
 
 class ContentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $contentdata = Contents::all();
