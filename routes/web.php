@@ -18,5 +18,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('categories', CategoriesController::class);
 
 Route::resource('contents', ContentsController::class);
-Route::get('/contents/edit/{content}', [ContentsController::class, 'edit']);
-Route::delete('/contents/{content}', [ContentsController::class, 'destroy']);
