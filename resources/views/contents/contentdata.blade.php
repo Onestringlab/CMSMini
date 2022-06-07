@@ -28,7 +28,7 @@
                 <td>{{$content->created_at}}</td>
                 <td>{{$content->updated_at}}</td>
                 <td><a href="contents/{{$content->id}}"><i class="bi bi-pencil-square"></i></a> |
-                    <a href="contents/edit/{{$content->id}}"><i class="bi bi-trash"></i></a>
+                    <a href="contents/{{$content->id}}/edit"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             @endforeach

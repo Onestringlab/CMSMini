@@ -16,8 +16,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('categories', CategoriesController::class);
-Route::get('/categories/edit/{category}', [CategoriesController::class, 'edit']);
-Route::delete('/categories/{category}', [CategoriesController::class, 'destroy']);
 
 Route::resource('contents', ContentsController::class);
 Route::get('/contents/edit/{content}', [ContentsController::class, 'edit']);

@@ -27,7 +27,7 @@
                 <td>{{$category->updated_at}}</td>
                 <td>
                     <a href="categories/{{$category->id}}"><i class="bi bi-pencil-square"></i></a> |
-                    <a href="categories/edit/{{$category->id}}"><i class="bi bi-trash"></i></a>
+                    <a href="categories/{{$category->id}}/edit"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             @endforeach
