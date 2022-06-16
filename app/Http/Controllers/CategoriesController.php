@@ -34,13 +34,13 @@ class CategoriesController extends Controller
     public function show($id)
     {
         $category = Categories::find($id);
-        return view("categories/categoryshow", ["category" => $category]);
+        return view("categories/categoryshows", ["category" => $category]);
     }
 
     public function edit($id)
     {
         $category = Categories::find($id);
-        return view("categories/categorydelete", ["category" => $category]);
+        return view("categories/categoryedit", ["category" => $category]);
     }
 
     public function update(Request $request, $id)

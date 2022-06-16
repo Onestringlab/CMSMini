@@ -31,7 +31,20 @@ class ContentsController extends Controller
         $content->title = $request->title;
         $content->cat_id = $request->category;
         $content->content = $request->content;
-        $content->picture = $request->picture;
+
+        if ($request->file('picture') != null) {
+            $file = $request->file('picture');
+
+            $extfile = $file->getClientOriginalExtension();
+
+            $newname = time() . '.' . $extfile;
+
+            $destinationPath = "uploads";
+
+            $file->move($destinationPath, $newname);
+        }
+
+        $content->picture = $newname;
         $content->save();
         return redirect('/contents');
     }
@@ -45,7 +58,7 @@ class ContentsController extends Controller
     public function edit($id)
     {
         $content = Contents::find($id);
-        return view('contents/contentdelete', ['content' => $content]);
+        return view('contents/contentedit', ['content' => $content]);
     }
 
     public function update(Request $request, $id)
@@ -54,7 +67,28 @@ class ContentsController extends Controller
         $content->title = $request->title;
         $content->cat_id = $request->category;
         $content->content = $request->content;
-        $content->picture = $request->picture;
+
+        if ($request->file('picture') != null) {
+            $file = $request->file('picture');
+
+            $extfile = $file->getClientOriginalExtension();
+
+            $newname = time() . '.' . $extfile;
+
+            $destinationPath = "uploads";
+
+            $file->move($destinationPath, $newname);
+
+            $pic_old = $destinationPath . '/' . $request->pic_old;
+            if (file_exists(public_path($pic_old))) {
+                unlink(public_path($pic_old));
+            }
+        } else {
+            $newname =  $request->pic_old;
+        }
+
+        $content->picture = $newname;
+
         $content->save();
         return redirect('/contents');
     }

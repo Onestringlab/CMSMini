@@ -11,7 +11,6 @@
                 <th scope="col">Category</th>
                 <th scope="col" width="400px">Content</th>
                 <th scope="col">Picture</th>
-                <th scope="col">Created At</th>
                 <th scope="col">Updated At</th>
                 <th scope="col"><a href="contents/create"><i class="bi bi-plus-square"></i></a></th>
             </tr>
@@ -24,11 +23,12 @@
                 <td>{{$content->title}}</td>
                 <td>{{$content->getCategory['category']}}</td>
                 <td>{{$content->content}}</td>
-                <td>{{$content->picture}}</td>
-                <td>{{$content->created_at}}</td>
+                <td>
+                    <img src="{{url('/uploads/')}}/{{$content->picture}}" width="120px">
+                </td>
                 <td>{{$content->updated_at}}</td>
-                <td><a href="contents/{{$content->id}}"><i class="bi bi-pencil-square"></i></a> |
-                    <a href="contents/{{$content->id}}/edit"><i class="bi bi-trash"></i></a>
+                <td><a href="contents/{{$content->id}}/edit"><i class="bi bi-pencil-square"></i></a> |
+                    <a href="contents/{{$content->id}}"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             @endforeach

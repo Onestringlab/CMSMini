@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Create Content Data</h1>
-    <form action="../contents" method="post">
+    <form action="{{url('/')}}/contents" method="post" enctype="multipart/form-data">
         <div class="mb-3 row">
             <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
@@ -25,7 +25,7 @@
         <div class="mb-3 row">
             <label for="inputPicture" class="col-sm-2 col-form-label">Picture</label>
             <div class="col-sm-10">
-                <input name="picture" class="form-control" id="inputPicture">
+                <input name="picture" class="form-control" id="inputPicture" type="file">
             </div>
         </div>
         <div class="mb-3 row">

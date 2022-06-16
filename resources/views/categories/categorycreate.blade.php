@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Create Category Data</h1>
-    <form action="../categories" method="post">
+    <form action="{{url('/')}}/categories" method="post">
         <div class="mb-3 row">
             <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
             <div class="col-sm-10">
