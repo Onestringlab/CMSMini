@@ -21,8 +21,8 @@ class ContentsController extends Controller
 
     public function create()
     {
-        $categoriesdata = Categories::all();
-        return view('contents/contentcreate', ['categoriesdata' => $categoriesdata]);
+        $categories = Categories::all();
+        return view('contents/contentcreate', ['categories' => $categories]);
     }
 
     public function store(Request $request)
@@ -58,7 +58,8 @@ class ContentsController extends Controller
     public function edit($id)
     {
         $content = Contents::find($id);
-        return view('contents/contentedit', ['content' => $content]);
+        $categories = Categories::all();
+        return view('contents/contentedit', ['content' => $content, 'categories' => $categories]);
     }
 
     public function update(Request $request, $id)
@@ -96,6 +97,11 @@ class ContentsController extends Controller
     public function destroy($id)
     {
         $content = Contents::find($id);
+        $destinationPath = "uploads";
+        $picture = $destinationPath . '/' . $content->picture;
+        if (file_exists(public_path($picture))) {
+            unlink(public_path($picture));
+        }
         $content->delete();
         return redirect('/contents');
     }

@@ -5,15 +5,20 @@
     <h1>Create Content Data</h1>
     <form action="{{url('/')}}/contents" method="post" enctype="multipart/form-data">
         <div class="mb-3 row">
-            <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+            <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
             <div class="col-sm-10">
-                <input name="title" class="form-control" id="inputTitle">
+                <select name="category" class="form-control" id="inputCategory">
+                    @foreach ($categories as $category )
+                    <option value="{{ $category->id }}">
+                        {{$category->category}}
+                        @endforeach
+                </select>
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
+            <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
-                <input name="category" class="form-control" id="inputCategory">
+                <input name="title" class="form-control" id="inputTitle">
             </div>
         </div>
         <div class="mb-3 row">

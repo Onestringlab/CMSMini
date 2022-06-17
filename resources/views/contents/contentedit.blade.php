@@ -5,15 +5,24 @@
     <h1>Update Content Data</h1>
     <form action="{{url('/')}}/contents/{{$content->id}}" method="post" enctype="multipart/form-data">
         <div class="mb-3 row">
-            <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+            <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
             <div class="col-sm-10">
-                <input name="title" class="form-control" id="inputTitle" value="{{ $content->title }}">
+                <select name="category" class="form-control" id="inputCategory">
+                    @foreach ($categories as $category )
+                    @php ($selected = "")
+                    @if($content->cat_id == $category->id)
+                    @php ($selected = "selected")
+                    @endif
+                    <option value="{{ $category->id }}" {{$selected}}>
+                        {{$category->category}}
+                        @endforeach
+                </select>
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
+            <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
-                <input name="category" class="form-control" id="inputCategory" value="{{ $content->cat_id }}">
+                <input name="title" class="form-control" id="inputTitle" value="{{ $content->title }}">
             </div>
         </div>
         <div class="mb-3 row">
