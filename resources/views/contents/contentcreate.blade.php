@@ -18,19 +18,28 @@
         <div class="mb-3 row">
             <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
-                <input name="title" class="form-control" id="inputTitle">
+                <input name="title" class="form-control" id="inputTitle" value="{{ old('title')}}">
+                @error('title')
+                <div class="alert alert-danger">{{ $message}} </div>
+                @enderror
             </div>
         </div>
         <div class="mb-3 row">
             <label for="inputContent" class="col-sm-2 col-form-label">Content</label>
             <div class="col-sm-10">
-                <input name="content" class="form-control" id="inputContent">
+                <input name="content" class="form-control" id="inputContent" value="{{ old('content')}}">
+                @error('content')
+                <div class="alert alert-danger">{{ $message}} </div>
+                @enderror
             </div>
         </div>
         <div class="mb-3 row">
             <label for="inputPicture" class="col-sm-2 col-form-label">Picture</label>
             <div class="col-sm-10">
-                <input name="picture" class="form-control" id="inputPicture" type="file">
+                <input name="picture" class="form-control" id="inputPicture" type="file" value="{{ old('picture')}}">
+                @error('picture')
+                <div class="alert alert-danger">{{ $message}} </div>
+                @enderror
             </div>
         </div>
         <div class="mb-3 row">

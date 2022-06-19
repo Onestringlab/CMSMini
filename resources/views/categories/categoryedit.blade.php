@@ -8,6 +8,9 @@
             <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
             <div class="col-sm-10">
                 <input name="category" class="form-control" id="inputCategory" value="{{$category->category}}">
+                @error('category')
+                <div class="alert alert-danger">{{ $message}} </div>
+                @enderror
             </div>
         </div>
         <div class="mb-3 row">

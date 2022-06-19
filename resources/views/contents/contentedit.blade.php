@@ -23,12 +23,18 @@
             <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
                 <input name="title" class="form-control" id="inputTitle" value="{{ $content->title }}">
+                @error('title')
+                <div class="alert alert-danger">{{ $message}} </div>
+                @enderror
             </div>
         </div>
         <div class="mb-3 row">
             <label for="inputContent" class="col-sm-2 col-form-label">Content</label>
             <div class="col-sm-10">
                 <input name="content" class="form-control" id="inputContent" value="{{ $content->content }}">
+                @error('content')
+                <div class="alert alert-danger">{{ $message}} </div>
+                @enderror
             </div>
         </div>
         <div class="mb-3 row">

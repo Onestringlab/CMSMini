@@ -25,6 +25,10 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'category' => 'required|min:5'
+        ]);
+
         $category = new Categories;
         $category->category = $request->category;
         $category->save();
@@ -45,6 +49,10 @@ class CategoriesController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'category' => 'required|min:5'
+        ]);
+
         $category = Categories::find($id);
         $category->category = $request->category;
         $category->save();

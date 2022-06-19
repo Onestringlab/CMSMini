@@ -27,6 +27,22 @@ class ContentsController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate(
+            [
+                'category' => 'required',
+                'title' => 'required|min:10',
+                'content' => 'required|min:100',
+                'picture' => 'required'
+            ],
+            [
+                'title.required' => 'Title harus di isi',
+                'title.min' => 'Jumlah karakater minimal 10',
+                'content.required' => 'Content harus di isi',
+                'picture.required' => 'Picture harus di isi'
+            ]
+        );
+
+
         $content = new Contents;
         $content->title = $request->title;
         $content->cat_id = $request->category;
@@ -64,6 +80,19 @@ class ContentsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validated = $request->validate(
+            [
+                'category' => 'required',
+                'title' => 'required|min:10',
+                'content' => 'required|min:100'
+            ],
+            [
+                'title.required' => 'Title harus di isi',
+                'title.min' => 'Jumlah karakater minimal 10',
+                'content.required' => 'Content harus di isi'
+            ]
+        );
+
         $content = Contents::find($id);
         $content->title = $request->title;
         $content->cat_id = $request->category;
