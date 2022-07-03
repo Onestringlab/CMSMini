@@ -7,8 +7,8 @@
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Title</th>
                 <th scope="col">Category</th>
+                <th scope="col">Title</th>
                 <th scope="col" width="400px">Content</th>
                 <th scope="col">Picture</th>
                 <th scope="col">Updated At</th>
@@ -20,9 +20,9 @@
             @foreach ($contentdata as $content)
             <tr>
                 <th scope="row">{{$no++}}</th>
-                <td>{{$content->title}}</td>
                 <td>{{$content->getCategory['category']}}</td>
-                <td>{{$content->content}}</td>
+                <td>{{$content->title}}</td>
+                <td>{{substr($content->content,0,150)}}</td>
                 <td>
                     <img src="{{url('/uploads/')}}/{{$content->picture}}" width="120px">
                 </td>

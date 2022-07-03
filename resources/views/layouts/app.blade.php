@@ -45,6 +45,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="bi bi-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/1">
+                                <i class="bi bi-newspaper"></i>
+                                News
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/3">
+                                <i class="bi bi-postage-heart"></i>
+                                Hobbies
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/8">
+                                <i class="bi bi-display"></i>
+                                Movies
+                            </a>
+                        </li>
                         @Auth
                         <li class="nav-item">
                             <a class="nav-link" href="/categories">
